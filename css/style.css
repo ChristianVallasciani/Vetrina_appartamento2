@@ -14,8 +14,8 @@
 
 /* ---- Palette ---- */
 :root {
-  --navy:         #1a2c44;
-  --navy-mid:     #253d5b;
+  --navy:         #2f77d4;
+  --navy-mid:     #2365b6;
   --azure:        #3a8fc4;
   --azure-hover:  #2d7fa8;
   --azure-light:  #7dc4e8;
@@ -24,6 +24,9 @@
   --sand-light:   #faf7f2;
   --mint:         #6bbfb5;
   --coral:        #d96b50;
+  --coral-pale:   #faeee9;
+  --gold:         #c09a45;
+  --gold-pale:    #faf4e3;
   --cream:        #fdfcfa;
 
   --text:         #2a333f;
@@ -288,7 +291,7 @@ h1, h2, h3 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url("../assets/immages/hero.WebP") center/cover no-repeat;
+  background: url("../img/hero.jpg") center/cover no-repeat;
   color: #fff;
   padding: 6rem 1.5rem 0;
 }
@@ -422,64 +425,195 @@ h1, h2, h3 {
   opacity: 0.82;
 }
 
-/* ---- Caratteristiche ---- */
+/* ---- Caratteristiche — Feature Grid compatto ---- */
 #caratteristiche {
   padding: 5rem 0 4.5rem;
   background: var(--sand-light);
 }
 
-.advantages-strip {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
-  margin-top: 2rem;
+.advantages-sub {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin-bottom: 2.75rem;
+  margin-top: 0.4rem;
 }
 
-.advantage-card {
-  padding: 2.1rem 1.75rem;
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.feature-chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem 1.25rem 1.4rem;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-  gap: 0.75rem;
-  border-right: 1px solid var(--border);
-  transition: background 0.25s;
+  gap: 0.6rem;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  cursor: default;
 }
-.advantage-card:last-child { border-right: none; }
-.advantage-card:hover { background: var(--azure-pale); }
+.feature-chip:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--azure-light);
+}
 
-.advantage-icon {
-  font-size: 1.75rem;
+.feature-chip-icon {
+  font-size: 2rem;
   width: 3.25rem;
   height: 3.25rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
-  background: var(--sand);
-  transition: background 0.25s, transform 0.2s;
+  background: var(--azure-pale);
+  transition: background 0.25s, transform 0.25s;
 }
-.advantage-card:hover .advantage-icon {
-  background: rgba(58,143,196,0.15);
-  transform: scale(1.08);
+.feature-chip:hover .feature-chip-icon {
+  background: rgba(58,143,196,0.18);
+  transform: scale(1.1);
 }
 
-.advantage-text h3 {
+.feature-chip h3 {
   font-family: "DM Sans", sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 0.3rem;
+  line-height: 1.2;
 }
 
-.advantage-text p {
-  font-size: 0.88rem;
+.feature-chip p {
+  font-size: 0.82rem;
   color: var(--text-soft);
-  line-height: 1.65;
+  line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+  .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .feature-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Contatti Rapidi — Mini CTA Cards ---- */
+#contatti-rapidi {
+  padding: 5rem 0;
+  background: var(--sand);
+}
+
+.cta-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-contact-card {
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem 1.75rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid transparent;
+  transition: transform 0.28s, box-shadow 0.28s;
+  position: relative;
+  overflow: hidden;
+}
+.cta-contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Colori soft per ogni card */
+.cta-contact-card--phone {
+  background: var(--azure-pale);
+  border-color: rgba(58,143,196,0.2);
+}
+.cta-contact-card--whatsapp {
+  background: #edfbf4;
+  border-color: rgba(37,211,102,0.2);
+}
+.cta-contact-card--email {
+  background: var(--gold-pale);
+  border-color: rgba(192,154,69,0.2);
+}
+
+/* Icona grande */
+.cta-card-icon {
+  font-size: 2.6rem;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  transition: transform 0.25s;
+}
+.cta-contact-card:hover .cta-card-icon {
+  transform: scale(1.15) rotate(-4deg);
+}
+
+.cta-card-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.cta-card-value {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+/* Bottone CTA dentro la card */
+.cta-card-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
+  width: 100%;
+  cursor: pointer;
+}
+.cta-card-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.14);
+}
+
+.cta-card-btn--phone {
+  background: var(--azure);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(58,143,196,0.3);
+}
+.cta-card-btn--whatsapp {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(37,211,102,0.3);
+}
+.cta-card-btn--email {
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(26,44,68,0.2);
+}
+
+@media (max-width: 700px) {
+  .cta-contact-grid { grid-template-columns: 1fr; max-width: 360px; }
 }
 
 /* ---- Anteprima Foto ---- */
@@ -532,29 +666,53 @@ h1, h2, h3 {
   margin-top: 2.25rem;
 }
 
-/* ---- Contatti Rapidi ---- */
-#contatti-rapidi {
+#disponibilita {
   padding: 5rem 0;
-  background: var(--sand);
+  background: var(--sfondo-body);
 }
 
-.quick-contact-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 580px;
-  margin: 0 auto 2.5rem;
+.calendar-wrapper {
+  margin-top: 2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
 }
 
-/* ---- Contact Cards (shared) ---- */
+.calendar-wrapper iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.calendar-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--testo-soft);
+  margin-top: 1rem;
+}
+
+.calendar-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+/* ---- Contact Cards (info.html) ---- */
 .contact-card {
   background: var(--surface);
   border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
+  padding: 2.25rem 1.75rem;
   text-align: center;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border-top: 3px solid var(--azure-light);
+  transition: transform 0.28s, box-shadow 0.28s;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--azure), var(--azure-light));
 }
 .contact-card:hover {
   transform: translateY(-5px);
@@ -562,37 +720,42 @@ h1, h2, h3 {
 }
 
 .contact-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 0.6rem;
-  width: 3rem;
-  height: 3rem;
+  width: 3.5rem;
+  height: 3.5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-md);
   background: var(--azure-pale);
+  transition: transform 0.25s;
 }
+.contact-card:hover .contact-icon { transform: scale(1.12) rotate(-4deg); }
 
 .contact-card h3 {
   font-family: "DM Sans", sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  color: var(--navy);
+  letter-spacing: 0.1em;
+  color: var(--text-soft);
   margin-bottom: 0.45rem;
 }
 
 .contact-link {
-  color: var(--azure);
-  font-weight: 500;
+  color: var(--navy);
+  font-weight: 600;
   font-size: 0.95rem;
   word-break: break-word;
 }
-a.contact-link:hover { text-decoration: underline; }
+a.contact-link:hover {
+  color: var(--azure);
+  text-decoration: underline;
+}
 
 .contact-hint {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
   margin-top: 0.4rem;
 }
@@ -762,27 +925,29 @@ a.contact-link:hover { text-decoration: underline; }
   width: 100%;
 }
 
-.contact-info .contact-card:nth-child(1) {
-  border-top-color: var(--mint);
+.contact-info .contact-card:nth-child(1)::before {
+  background: linear-gradient(90deg, var(--azure), var(--azure-light));
 }
 .contact-info .contact-card:nth-child(1) .contact-icon {
-  background: rgba(107,191,181,0.15);
+  background: var(--azure-pale);
 }
-.contact-info .contact-card:nth-child(2) {
-  border-top-color: #e8c84a;
+.contact-info .contact-card:nth-child(2)::before {
+  background: linear-gradient(90deg, var(--gold), #e8c46a);
 }
 .contact-info .contact-card:nth-child(2) .contact-icon {
-  background: rgba(232,200,74,0.18);
+  background: var(--gold-pale);
 }
 .contact-info .contact-card:nth-child(3) {
   grid-column: 1 / -1;
   justify-self: center;
   max-width: 320px;
   width: 100%;
-  border-top-color: var(--coral);
+}
+.contact-info .contact-card:nth-child(3)::before {
+  background: linear-gradient(90deg, var(--coral), #e8856a);
 }
 .contact-info .contact-card:nth-child(3) .contact-icon {
-  background: rgba(217,107,80,0.12);
+  background: var(--coral-pale);
 }
 
 /* ---- Chi Siamo & Instagram ---- */
@@ -957,10 +1122,6 @@ footer {
     aspect-ratio: 16/9;
   }
   .location-content { grid-template-columns: 1fr; }
-  .advantages-strip { grid-template-columns: repeat(2, 1fr); }
-  .advantage-card:nth-child(2) { border-right: none; }
-  .advantage-card:nth-child(1),
-  .advantage-card:nth-child(2) { border-bottom: 1px solid var(--border); }
   .about-ig-row { grid-template-columns: 1fr; }
   .about-col .section-title { text-align: center; }
   .about-col p { text-align: center; }
@@ -1023,10 +1184,6 @@ footer {
 
   .gallery-section-grid { grid-template-columns: 1fr; }
   .gallery-item--hero   { grid-column: span 1; aspect-ratio: 4/3; }
-
-  .advantages-strip     { grid-template-columns: 1fr; }
-  .advantage-card       { border-right: none !important; border-bottom: 1px solid var(--border); }
-  .advantage-card:last-child { border-bottom: none; }
 
   .preview-grid         { grid-template-columns: 1fr; }
   .preview-item--full   { grid-column: span 1; aspect-ratio: 16/9; }

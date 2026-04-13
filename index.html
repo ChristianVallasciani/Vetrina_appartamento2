@@ -11,14 +11,14 @@
   <meta property="og:site_name"   content="Il Confine Azzurro">
   <meta property="og:title"       content="Il Confine Azzurro – Appartamento Vacanze Vista Mare | Gallipoli, Puglia">
   <meta property="og:description" content="Appartamento con vista mare a Gallipoli. Terrazza privata, cucina attrezzata, A/C e Wi-Fi. Prenota il tuo soggiorno nel Salento.">
-  <meta property="og:image"       content="img/hero.jpg">
+  <meta property="og:image"       content="assets/img/terrazzo/terrazzo_05.jpg">
   <meta property="og:url"         content="https://www.ilconfineazzurro.it/">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Il Confine Azzurro – Appartamento Vacanze Vista Mare | Gallipoli">
   <meta name="twitter:description" content="Appartamento con vista mare a Gallipoli, Puglia. Terrazza privata, cucina attrezzata.">
-  <meta name="twitter:image"       content="img/hero.jpg">
+  <meta name="twitter:image"       content="assets/img/terrazzo/terrazzo_05.jpg">
 
   <title>Il Confine Azzurro – Appartamento Vacanze Vista Mare | Gallipoli, Puglia</title>
 
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Schema.org — LodgingBusiness -->
   <script type="application/ld+json">
@@ -55,7 +55,7 @@
       "longitude": 17.9899
     },
     "url": "https://www.ilconfineazzurro.it",
-    "image": "https://www.ilconfineazzurro.it/img/hero.jpg",
+    "image": "https://www.ilconfineazzurro.it/assets/img/terrazzo/terrazzo_05.jpg",
     "priceRange": "€€",
     "amenityFeature": [
       {"@type": "LocationFeatureSpecification", "name": "Vista mare",         "value": true},
@@ -68,7 +68,7 @@
   }
   </script>
 </head>
-<body class="has-bottom-bar">
+<body>
 
   <!-- ═══════════════════════════════════════════════════════
        NAVBAR
@@ -150,11 +150,7 @@
           <h3>Cucina Attrezzata</h3>
           <p>Cucina completa con forno, lavastoviglie e tutto l'occorrente per cucinare.</p>
         </article>
-        <article class="feature-card">
-          <span class="feature-icon" aria-hidden="true">🅿️</span>
-          <h3>Parcheggio</h3>
-          <p>Posto auto privato incluso nel soggiorno, a pochi passi dall'appartamento.</p>
-        </article>
+        
         <article class="feature-card">
           <span class="feature-icon" aria-hidden="true">🛏️</span>
           <h3>Fino a 4 Ospiti</h3>
@@ -171,37 +167,42 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Gli spazi</span>
-        <h2 id="preview-heading">Un appartamento da scoprire</h2>
-        <p class="section-subtitle">Ambienti luminosi, arredi curati e una vista che toglie il fiato.</p>
+        <h2 id="preview-heading">Le foto migliori della casa</h2>
+        <p class="section-subtitle">Una selezione degli ambienti piu apprezzati: living, cucina, camera, bagno e terrazza vista mare.</p>
       </div>
 
       <div class="preview-grid">
         <a href="galleria.html" class="preview-item preview-hero"
-           aria-label="Vai alla galleria completa — terrazza panoramica">
-          <img src="img/gallery/terrazza.jpg"
+           aria-label="Vai alla galleria completa - terrazza panoramica vista mare">
+          <img src="assets/img/terrazzo/terrazzo_05.jpg"
                alt="Terrazza panoramica con vista sul mare del Salento"
                loading="lazy">
           <span class="preview-overlay">Vedi la galleria completa</span>
+          <span class="preview-tag">Terrazza panoramica</span>
         </a>
-        <a href="galleria.html" class="preview-item" aria-label="Soggiorno — vai alla galleria">
-          <img src="img/gallery/soggiorno.jpg" alt="Soggiorno luminoso" loading="lazy">
+        <a href="galleria.html#zona-living" class="preview-item" aria-label="Vai alla zona living in galleria">
+          <img src="assets/img/divano/divano_02.jpg" alt="Zona living luminosa" loading="lazy">
           <span class="preview-overlay"></span>
+          <span class="preview-tag">Zona living</span>
         </a>
-        <a href="galleria.html" class="preview-item" aria-label="Cucina — vai alla galleria">
-          <img src="img/gallery/cucina.jpg" alt="Cucina attrezzata" loading="lazy">
+        <a href="galleria.html#zona-cucina" class="preview-item" aria-label="Vai alla cucina in galleria">
+          <img src="assets/img/cucina/cucina.jpg" alt="Cucina attrezzata" loading="lazy">
           <span class="preview-overlay"></span>
+          <span class="preview-tag">Cucina</span>
         </a>
-        <a href="galleria.html" class="preview-item" aria-label="Camera matrimoniale — vai alla galleria">
-          <img src="img/gallery/camera-matrimoniale.jpg" alt="Camera matrimoniale" loading="lazy">
+        <a href="galleria.html#zona-camera" class="preview-item" aria-label="Vai alla camera matrimoniale in galleria">
+          <img src="assets/img/matrimoniale/matrimoniale_02.jpg" alt="Camera matrimoniale" loading="lazy">
           <span class="preview-overlay"></span>
+          <span class="preview-tag">Camera matrimoniale</span>
         </a>
-        <a href="galleria.html" class="preview-item" aria-label="Bagno — vai alla galleria">
-          <img src="img/gallery/bagno.jpg" alt="Bagno moderno" loading="lazy">
+        <a href="galleria.html#zona-bagno" class="preview-item" aria-label="Vai al bagno in galleria">
+          <img src="assets/img/bagno/bagno04.jpg" alt="Bagno moderno" loading="lazy">
           <span class="preview-overlay"></span>
+          <span class="preview-tag">Bagno</span>
         </a>
       </div>
 
-      <div style="margin-top:1.5rem;text-align:center;">
+      <div class="preview-cta">
         <a href="galleria.html" class="btn btn-outline">Vedi tutte le foto</a>
       </div>
     </div>
@@ -228,11 +229,7 @@
           aria-label="Calendario mensile con le date di disponibilità dell'appartamento">
         </iframe>
       </div>
-      <p class="notice">
-        ℹ️ Per attivare il calendario reale sostituisci <code>YOUR_CALENDAR_ID</code> con l'ID del tuo Google Calendar pubblico
-        (<a href="https://support.google.com/calendar/answer/37083" target="_blank" rel="noopener noreferrer">come trovarlo</a>).
-        I giorni evidenziati indicheranno i periodi non disponibili.
-      </p>
+      
     </div>
   </section>
 
@@ -258,7 +255,7 @@
           <span class="card-icon" aria-hidden="true">💬</span>
           <h4>WhatsApp</h4>
           <p>Risposta rapida, anche la sera</p>
-          <span class="btn btn-whatsapp" style="margin-top:0.4rem;">Scrivi ora</span>
+          <span class="btn btn-whatsapp">Scrivi ora</span>
         </a>
 
         <a href="tel:+393331234567"
@@ -267,7 +264,7 @@
           <span class="card-icon" aria-hidden="true">📞</span>
           <h4>Telefono</h4>
           <p>Lun–Sab, 9:00–20:00</p>
-          <span class="btn btn-primary" style="margin-top:0.4rem;">+39 333 123 4567</span>
+          <span class="btn btn-primary">+39 333 123 4567</span>
         </a>
 
         <a href="mailto:info@ilconfineazzurro.it?subject=Richiesta%20prenotazione%20Il%20Confine%20Azzurro"
@@ -276,7 +273,7 @@
           <span class="card-icon" aria-hidden="true">✉️</span>
           <h4>Email</h4>
           <p>Per preventivi e informazioni</p>
-          <span class="btn btn-outline" style="margin-top:0.4rem;">Invia email</span>
+          <span class="btn btn-outline">Invia email</span>
         </a>
       </div>
     </div>
@@ -304,7 +301,7 @@
           </ul>
         </nav>
 
-        <address class="footer-col" style="font-style:normal;">
+        <address class="footer-col">
           <h5>Contatti</h5>
           <ul>
             <li><a href="tel:+393331234567">+39 333 123 4567</a></li>
@@ -331,6 +328,6 @@
   </footer>
 
 
-  <script src="js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -109,45 +109,47 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ────────────────────────────────────────────────────────
-   * 5. LIGHTBOX
+   * 5. GALLERY LIGHTBOX (galleria.html)
    * ──────────────────────────────────────────────────────── */
-  const lightbox       = document.getElementById('lightbox');
-  if (!lightbox) return;   // Only runs on galleria.html
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
 
-  const lbImg          = document.getElementById('lightbox-img');
-  const lbCaption      = document.getElementById('lightbox-caption');
-  const lbCounter      = document.getElementById('lightbox-counter');
-  const lbClose        = document.getElementById('lightbox-close');
-  const lbPrev         = document.getElementById('lightbox-prev');
-  const lbNext         = document.getElementById('lightbox-next');
+  const galleryItems = Array.from(document.querySelectorAll('.gallery-item[data-src]'));
+
+  const lbImg     = document.getElementById('lightbox-img');
+  const lbCaption = document.getElementById('lightbox-caption');
+  const lbCounter = document.getElementById('lightbox-counter');
+  const lbClose   = document.getElementById('lightbox-close');
+  const lbPrev    = document.getElementById('lightbox-prev');
+  const lbNext    = document.getElementById('lightbox-next');
 
   let gallery = [];
   let current = 0;
 
-  /** Build flat image array from all .gallery-item[data-src] */
   function buildGallery() {
-    gallery = Array.from(
-      document.querySelectorAll('.gallery-item[data-src]')
-    ).map(el => ({
-      src:     el.dataset.src,
-      alt:     el.dataset.alt     || '',
+    gallery = galleryItems.map(el => ({
+      src: el.dataset.src,
+      alt: el.dataset.alt || '',
       caption: el.dataset.caption || '',
     }));
   }
 
   function clamp(index) {
+    if (!gallery.length) return 0;
     return ((index % gallery.length) + gallery.length) % gallery.length;
   }
 
   function renderLightbox() {
+    if (!gallery.length) return;
     const { src, alt, caption } = gallery[current];
-    lbImg.src                   = src;
-    lbImg.alt                   = alt;
-    lbCaption.textContent        = caption;
-    lbCounter.textContent        = `${current + 1} / ${gallery.length}`;
+    lbImg.src = src;
+    lbImg.alt = alt;
+    lbCaption.textContent = caption;
+    lbCounter.textContent = `${current + 1} / ${gallery.length}`;
   }
 
   function openLightbox(index) {
+    if (!gallery.length) return;
     current = clamp(index);
     renderLightbox();
     lightbox.classList.add('active');
@@ -161,28 +163,34 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function navigate(dir) {
+    if (!gallery.length) return;
     current = clamp(current + dir);
     renderLightbox();
   }
 
-  buildGallery();
+  galleryItems.forEach(item => {
+    item.setAttribute('role', 'button');
+    item.setAttribute('tabindex', '0');
 
-  // Attach click + keyboard to each item
-  document.querySelectorAll('.gallery-item[data-src]').forEach((el, i) => {
-    el.setAttribute('role',     'button');
-    el.setAttribute('tabindex', '0');
-    el.addEventListener('click', () => openLightbox(i));
-    el.addEventListener('keydown', e => {
+    const openFromItem = () => {
+      const index = galleryItems.indexOf(item);
+      if (index > -1) openLightbox(index);
+    };
+
+    item.addEventListener('click', openFromItem);
+    item.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        openLightbox(i);
+        openFromItem();
       }
     });
   });
 
+  buildGallery();
+
   lbClose?.addEventListener('click', closeLightbox);
-  lbPrev?.addEventListener('click',  () => navigate(-1));
-  lbNext?.addEventListener('click',  () => navigate(1));
+  lbPrev?.addEventListener('click', () => navigate(-1));
+  lbNext?.addEventListener('click', () => navigate(1));
 
   // Close on backdrop click
   lightbox.addEventListener('click', e => {
@@ -192,20 +200,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Keyboard navigation inside lightbox
   document.addEventListener('keydown', e => {
     if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape')      closeLightbox();
-    if (e.key === 'ArrowLeft')   navigate(-1);
-    if (e.key === 'ArrowRight')  navigate(1);
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navigate(-1);
+    if (e.key === 'ArrowRight') navigate(1);
   });
 
-  // Touch swipe
+  // Touch swipe in lightbox
   let touchStartX = 0;
+  let touchStartY = 0;
+
   lightbox.addEventListener('touchstart', e => {
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
   lightbox.addEventListener('touchend', e => {
-    const delta = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(delta) > 50) navigate(delta < 0 ? 1 : -1);
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
+      navigate(deltaX < 0 ? 1 : -1);
+    }
   }, { passive: true });
 
 });

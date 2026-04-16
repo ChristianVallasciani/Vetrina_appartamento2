@@ -1,4 +1,4 @@
-# Il Confine Azzurro — Sito Vetrina
+# Casavivimare — Sito Vetrina
 
 Sito statico di presentazione appartamento vacanze a Gallipoli (LE), Puglia.
 
@@ -75,14 +75,14 @@ Cerca e sostituisci in tutti i file HTML:
 |---|---|
 | `+39 333 123 4567` | Numero di telefono/WhatsApp |
 | `393331234567` | Numero WhatsApp (formato internazionale, senza +) |
-| `info@ilconfineazzurro.it` | Indirizzo email |
+| `info@casavivimare.it` | Indirizzo email |
 | `Via del Mare, 12` | Indirizzo reale |
 | `Gallipoli` / `73014` / `LE` | Città, CAP, provincia |
-| `ilconfineazzurro` | Handle Instagram |
-| `www.ilconfineazzurro.it` | Dominio reale (per OG e Schema.org) |
+| `casavivimare` | Handle Instagram |
+| `www.casavivimare.it` | Dominio reale (per OG e Schema.org) |
 
 ### 6. Aggiornare sitemap.xml
-Sostituisci `https://www.ilconfineazzurro.it` con il dominio reale pubblicato.
+Sostituisci `https://www.casavivimare.it` con il dominio reale pubblicato.
 
 ## Avvio locale
 

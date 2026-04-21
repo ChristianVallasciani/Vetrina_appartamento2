@@ -8,7 +8,7 @@
   <!-- Open Graph -->
   <meta property="og:type"        content="website">
   <meta property="og:locale"      content="it_IT">
-  <meta property="og:site_name"   content="Casavivimare">
+  <meta property="og:site_name"   content="Casavivì">
   <meta property="og:title"       content="Galleria Foto – Casavivimare | Gallipoli, Puglia">
   <meta property="og:description" content="Scopri gli ambienti: soggiorno luminoso, cucina attrezzata, camere confortevoli e terrazza con vista mare a Gallipoli.">
   <meta property="og:image"       content="assets/img/terrazzo/terrazzo_05.jpg">
@@ -38,7 +38,7 @@
   ═══════════════════════════════════════════════════════ -->
   <nav id="navbar" aria-label="Navigazione principale">
     <div class="nav-container">
-      <a href="index.html" class="logo">Casavivimare</a>
+      <a href="index.html" class="logo">Casavivì</a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Apri menu di navigazione" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="index.html" class="nav-link">Home</a></li>
@@ -74,8 +74,17 @@
   <main>
     <section class="section gallery-showcase fade-in-section" aria-label="Galleria foto per ambiente" aria-labelledby="gallery-main-title">
       <div class="container">
+        <nav class="gallery-section-nav" aria-label="Vai direttamente alla sezione fotografica">
+          <a href="#sezione-terrazza" class="gallery-section-link">Terrazza</a>
+          <a href="#sezione-living" class="gallery-section-link">Living</a>
+          <a href="#sezione-bagno" class="gallery-section-link">Bagno</a>
+          <a href="#sezione-cucina" class="gallery-section-link">Cucina</a>
+          <a href="#sezione-camera" class="gallery-section-link">Camera</a>
+          <a href="#sezione-garage" class="gallery-section-link">Garage</a>
+        </nav>
+
         <div class="gallery-layout" id="gallery-grid">
-          <article class="gallery-block fade-in-section" aria-labelledby="gallery-terrazza-title">
+          <article id="sezione-terrazza" class="gallery-block fade-in-section" aria-labelledby="gallery-terrazza-title">
             <h3 id="gallery-terrazza-title" class="gallery-block-title">Terrazza panoramica</h3>
             <div class="gallery-grid gallery-grid--hero">
               <figure class="gallery-item gallery-item--dominant"
@@ -150,7 +159,7 @@
             </div>
           </article>
 
-          <article class="gallery-block fade-in-section" aria-labelledby="gallery-living-title">
+          <article id="sezione-living" class="gallery-block fade-in-section" aria-labelledby="gallery-living-title">
             <h3 id="gallery-living-title" class="gallery-block-title">Zona living</h3>
             <div class="gallery-grid gallery-grid--hero">
               <figure class="gallery-item gallery-item--dominant"
@@ -225,7 +234,7 @@
             </div>
           </article>
 
-          <article class="gallery-block fade-in-section" aria-labelledby="gallery-bagno-title">
+          <article id="sezione-bagno" class="gallery-block fade-in-section" aria-labelledby="gallery-bagno-title">
             <h3 id="gallery-bagno-title" class="gallery-block-title">Bagno moderno</h3>
             <div class="gallery-grid gallery-grid--hero">
               <figure class="gallery-item gallery-item--dominant"
@@ -286,7 +295,7 @@
             </div>
           </article>
 
-          <article class="gallery-block fade-in-section" aria-labelledby="gallery-cucina-title">
+          <article id="sezione-cucina" class="gallery-block fade-in-section" aria-labelledby="gallery-cucina-title">
             <h3 id="gallery-cucina-title" class="gallery-block-title">Cucina attrezzata</h3>
             <div class="gallery-grid gallery-grid--hero">
               <figure class="gallery-item gallery-item--dominant"
@@ -347,14 +356,14 @@
             </div>
           </article>
 
-          <article class="gallery-block fade-in-section" aria-labelledby="gallery-camera-title">
+          <article id="sezione-camera" class="gallery-block fade-in-section" aria-labelledby="gallery-camera-title">
             <h3 id="gallery-camera-title" class="gallery-block-title">Camera da letto</h3>
             <div class="gallery-grid gallery-grid--hero">
               <figure class="gallery-item gallery-item--dominant"
-                      data-src="assets/img/matrimoniale/camera dettaglio.JPG"
+                      data-src="assets/img/matrimoniale/camera_intera.webp"
                       data-alt="Letto matrimoniale della camera principale"
                       data-caption="Camera da letto · Letto matrimoniale e atmosfera rilassante">
-                <img src="assets/img/matrimoniale/camera dettaglio.JPG"
+                <img src="assets/img/matrimoniale/camera_intera.webp"
                      alt="Letto matrimoniale della camera principale"
                      loading="lazy"
                      decoding="async">
@@ -365,7 +374,7 @@
               </figure>
 
               <figure class="gallery-item"
-                      data-src="assets/img/matrimoniale/camera dettaglio.jpg"
+                      data-src="assets/img/matrimoniale/camera dettaglio.JPG"
                       data-alt="Camera matrimoniale con armadiatura"
                       data-caption="Camera da letto · Armadiatura e spazi ordinati">
                 <img src="assets/img/matrimoniale/camera dettaglio.JPG"
@@ -421,6 +430,53 @@
                 <span class="gallery-item-zoom" aria-hidden="true">⊕</span>
               </figure>
 
+            </div>
+          </article>
+
+          <article id="sezione-garage" class="gallery-block fade-in-section" aria-labelledby="gallery-garage-title">
+            <h3 id="gallery-garage-title" class="gallery-block-title">Garage privato</h3>
+            <div class="gallery-grid gallery-grid--trio">
+              <figure class="gallery-item"
+                      data-src="assets/img/garage/20231019_163439.jpg"
+                      data-alt="Ingresso del garage privato dell'appartamento"
+                      data-caption="Garage · Ingresso privato">
+                <img src="assets/img/garage/20231019_163439.jpg"
+                     alt="Ingresso del garage privato dell'appartamento"
+                     loading="lazy"
+                     decoding="async">
+                <div class="gallery-item-overlay">
+                  <span class="gallery-item-caption">Garage · Ingresso privato</span>
+                </div>
+                <span class="gallery-item-zoom" aria-hidden="true">⊕</span>
+              </figure>
+
+              <figure class="gallery-item"
+                      data-src="assets/img/garage/20231019_163655.jpg"
+                      data-alt="Spazio interno del garage con area di manovra"
+                      data-caption="Garage · Spazio interno comodo">
+                <img src="assets/img/garage/20231019_163655.jpg"
+                     alt="Spazio interno del garage con area di manovra"
+                     loading="lazy"
+                     decoding="async">
+                <div class="gallery-item-overlay">
+                  <span class="gallery-item-caption">Garage · Spazio interno comodo</span>
+                </div>
+                <span class="gallery-item-zoom" aria-hidden="true">⊕</span>
+              </figure>
+
+              <figure class="gallery-item"
+                      data-src="assets/img/garage/20231021_122138.jpg"
+                      data-alt="Dettaglio del garage coperto a disposizione degli ospiti"
+                      data-caption="Garage · Posto auto coperto">
+                <img src="assets/img/garage/20231021_122138.jpg"
+                     alt="Dettaglio del garage coperto a disposizione degli ospiti"
+                     loading="lazy"
+                     decoding="async">
+                <div class="gallery-item-overlay">
+                  <span class="gallery-item-caption">Garage · Posto auto coperto</span>
+                </div>
+                <span class="gallery-item-zoom" aria-hidden="true">⊕</span>
+              </figure>
             </div>
           </article>
         </div>

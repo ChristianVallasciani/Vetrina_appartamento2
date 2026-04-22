@@ -26,7 +26,7 @@
   --c-whatsapp-hover:#1ebe5d;
 
   /* Typography */
-  --ff-display: 'Mebtho Francy', 'Cormorant Garamond', Georgia, serif;
+  --ff-display: 'Cormorant Garamond', Georgia, serif;
   --ff-serif:   'Cormorant Garamond', Georgia, serif;
   --ff-sans:    'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -58,18 +58,7 @@
   --t-slow: 0.6s ease;
 }
 
-/* 2. FONT FACE
------------------------------------------------------------- */
-@font-face {
-  font-family: 'Mebtho Francy';
-  src: url('../fonts/MebthoFrancy.woff2') format('woff2'),
-       url('../fonts/MebthoFrancy.woff')  format('woff');
-  font-weight: normal;
-  font-style:  normal;
-  font-display: swap;
-}
-
-/* 3. RESET & BASE
+/* 2. RESET & BASE
 ------------------------------------------------------------ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -101,7 +90,7 @@ button {
   border-radius: var(--r-sm);
 }
 
-/* 4. TYPOGRAPHY
+/* 3. TYPOGRAPHY
 ------------------------------------------------------------ */
 h1, h2, h3, h4 {
   font-family: var(--ff-serif);
@@ -117,7 +106,7 @@ h4 { font-size: clamp(1.05rem, 2vw, 1.35rem); }
 
 p  { max-width: 68ch; }
 
-/* 5. UTILITIES
+/* 4. UTILITIES
 ------------------------------------------------------------ */
 .container {
   width: 100%;
@@ -157,7 +146,7 @@ p  { max-width: 68ch; }
   font-weight: 300;
   margin-top: 0.7rem;
   margin-inline: auto;
-  text-align: center;
+  text-align:start;
   line-height: 1.65;
 }
 
@@ -169,7 +158,7 @@ p  { max-width: 68ch; }
   margin: 0 auto 2rem;
 }
 
-/* 6. SCROLL REVEAL
+/* 5. SCROLL REVEAL
 ------------------------------------------------------------ */
 .fade-in-section {
   opacity: 0;
@@ -182,7 +171,7 @@ p  { max-width: 68ch; }
   transform: translateY(0);
 }
 
-/* 7. NAVBAR
+/* 6. NAVBAR
 ------------------------------------------------------------ */
 #navbar {
   position: fixed;
